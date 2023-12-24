@@ -1,5 +1,10 @@
 {
     "UI": {
+        "resizable": true,
+        "maintain_aspect_ratio": true,
+        "width": 1000,
+        "height": 800,
+
         "Tabs": {
             "show_grid": false,
             "draw_borders_for_components": false,
@@ -12,7 +17,8 @@
                         "label": "Randomize",
                         "isToggle": false,
                         "topLeftCorner": "Kh",
-                        "bottomRightCorner": "Pm"
+                        "bottomRightCorner": "Pm",
+                        "info": "Press this button to generate a random pattern"
                     }],
                     "MidiDisplays": []
                 },
@@ -106,6 +112,7 @@
             "deletePreviousIncomingMidiMessagesOnBackwardPlayhead": true,
             "deletePreviousIncomingMidiMessagesOnRestart": true
         },
+
         "GeneratedContentVisualizer": {
             "enable": true,
             "allowToDragOutAsMidi": true
@@ -114,7 +121,12 @@
     },
 
     "StandaloneTransportPanel": {
-        "enable": true
+        "enable": true,
+        "disableInPluginMode": true,
+        "exclude_tempo_from_presets": true,
+        "exclude_time_signature_from_presets": false,
+        "exclude_record_button_from_presets": true,
+        "exclude_play_button_from_presets": true
     },
 
     "VirtualMidiOut": {
@@ -122,9 +134,9 @@
     },
 
     "event_communication_settings": {
-        "SendEventAtBeginningOfNewBuffers_FLAG": false,
-        "SendEventForNewBufferIfMetadataChanged_FLAG": false,
-        "SendNewBarEvents_FLAG": false,
+        "SendEventAtBeginningOfNewBuffers_FLAG": true,
+        "SendEventForNewBufferIfMetadataChanged_FLAG": true,
+        "SendNewBarEvents_FLAG": true,
         "SendTimeShiftEvents_FLAG": false,
         "delta_TimeShiftEventRatioOfQuarterNote": 0.5,
         "FilterNoteOnEvents_FLAG": false,
@@ -147,7 +159,7 @@
             "print_new_buffer_started": false,
             "print_generation_policy_reception": false,
             "print_generation_stream_reception": false,
-            "disableAllPrints": true
+            "disableAllPrints": false
         }
     }
 
